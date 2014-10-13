@@ -22,23 +22,49 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="173"/>
+                                    <rect key="frame" x="0.0" y="28" width="400" height="173"/>
                                 </variation>
                             </textView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="btO-f2-xMj">
+                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="434935597.96586901">
+                                    <!--2014-10-13 23:26:37 +0000-->
+                                </date>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="219" width="400" height="162"/>
+                                </variation>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sb5-03-fV4">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Process Date">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="154" y="405" width="92" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="processDateButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2Vx-D2-tMk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="rFJ-d1-Bgc"/>
+                                <exclude reference="btO-f2-xMj"/>
+                                <exclude reference="Sb5-03-fV4"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="rFJ-d1-Bgc"/>
+                                <include reference="btO-f2-xMj"/>
+                                <include reference="Sb5-03-fV4"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="datePicker" destination="btO-f2-xMj" id="fFS-RI-OiA"/>
                         <outlet property="textView" destination="rFJ-d1-Bgc" id="NL7-kD-Uv7"/>
                     </connections>
                 </viewController>

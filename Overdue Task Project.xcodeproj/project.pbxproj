@@ -86,9 +86,9 @@
 			children = (
 				00F56D1C19EA0B3A00C636C4 /* AppDelegate.h */,
 				00F56D1D19EA0B3A00C636C4 /* AppDelegate.m */,
+				00F56D2519EA0B3A00C636C4 /* Main.storyboard */,
 				00F56D2219EA0B3A00C636C4 /* ViewController.h */,
 				00F56D2319EA0B3A00C636C4 /* ViewController.m */,
-				00F56D2519EA0B3A00C636C4 /* Main.storyboard */,
 				00F56D2819EA0B3A00C636C4 /* Images.xcassets */,
 				00F56D2A19EA0B3A00C636C4 /* LaunchScreen.xib */,
 				00F56D1F19EA0B3A00C636C4 /* Overdue_Task_Project.xcdatamodeld */,
