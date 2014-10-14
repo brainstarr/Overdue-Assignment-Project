@@ -15,6 +15,9 @@
 		00F56D2919EA0B3A00C636C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00F56D2819EA0B3A00C636C4 /* Images.xcassets */; };
 		00F56D2C19EA0B3A00C636C4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F56D2A19EA0B3A00C636C4 /* LaunchScreen.xib */; };
 		00F56D3819EA0B3A00C636C4 /* Overdue_Task_ProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F56D3719EA0B3A00C636C4 /* Overdue_Task_ProjectTests.m */; };
+		00F56D4519EC9F7E00C636C4 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F56D4419EC9F7E00C636C4 /* AddTaskViewController.m */; };
+		00F56D4919ECA00D00C636C4 /* DetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F56D4819ECA00D00C636C4 /* DetailTaskViewController.m */; };
+		00F56D4D19ECA0AF00C636C4 /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F56D4C19ECA0AF00C636C4 /* EditTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,12 @@
 		00F56D3619EA0B3A00C636C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00F56D3719EA0B3A00C636C4 /* Overdue_Task_ProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Overdue_Task_ProjectTests.m; sourceTree = "<group>"; };
 		00F56D4119EA0B8D00C636C4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		00F56D4319EC9F7E00C636C4 /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
+		00F56D4419EC9F7E00C636C4 /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
+		00F56D4719ECA00D00C636C4 /* DetailTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTaskViewController.h; sourceTree = "<group>"; };
+		00F56D4819ECA00D00C636C4 /* DetailTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTaskViewController.m; sourceTree = "<group>"; };
+		00F56D4B19ECA0AF00C636C4 /* EditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTaskViewController.h; sourceTree = "<group>"; };
+		00F56D4C19ECA0AF00C636C4 /* EditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +96,10 @@
 				00F56D1C19EA0B3A00C636C4 /* AppDelegate.h */,
 				00F56D1D19EA0B3A00C636C4 /* AppDelegate.m */,
 				00F56D2519EA0B3A00C636C4 /* Main.storyboard */,
-				00F56D2219EA0B3A00C636C4 /* ViewController.h */,
-				00F56D2319EA0B3A00C636C4 /* ViewController.m */,
+				00F56D4E19ECA0B500C636C4 /* Edit Task VC */,
+				00F56D4A19ECA02300C636C4 /* Detail Task VC */,
+				00F56D4619EC9F8800C636C4 /* Add Task VC */,
+				00F56D4219EC9F5000C636C4 /* View Controller */,
 				00F56D2819EA0B3A00C636C4 /* Images.xcassets */,
 				00F56D2A19EA0B3A00C636C4 /* LaunchScreen.xib */,
 				00F56D1F19EA0B3A00C636C4 /* Overdue_Task_Project.xcdatamodeld */,
@@ -122,6 +133,42 @@
 				00F56D3619EA0B3A00C636C4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00F56D4219EC9F5000C636C4 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00F56D2219EA0B3A00C636C4 /* ViewController.h */,
+				00F56D2319EA0B3A00C636C4 /* ViewController.m */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		00F56D4619EC9F8800C636C4 /* Add Task VC */ = {
+			isa = PBXGroup;
+			children = (
+				00F56D4319EC9F7E00C636C4 /* AddTaskViewController.h */,
+				00F56D4419EC9F7E00C636C4 /* AddTaskViewController.m */,
+			);
+			name = "Add Task VC";
+			sourceTree = "<group>";
+		};
+		00F56D4A19ECA02300C636C4 /* Detail Task VC */ = {
+			isa = PBXGroup;
+			children = (
+				00F56D4719ECA00D00C636C4 /* DetailTaskViewController.h */,
+				00F56D4819ECA00D00C636C4 /* DetailTaskViewController.m */,
+			);
+			name = "Detail Task VC";
+			sourceTree = "<group>";
+		};
+		00F56D4E19ECA0B500C636C4 /* Edit Task VC */ = {
+			isa = PBXGroup;
+			children = (
+				00F56D4B19ECA0AF00C636C4 /* EditTaskViewController.h */,
+				00F56D4C19ECA0AF00C636C4 /* EditTaskViewController.m */,
+			);
+			name = "Edit Task VC";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,8 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00F56D4519EC9F7E00C636C4 /* AddTaskViewController.m in Sources */,
 				00F56D1E19EA0B3A00C636C4 /* AppDelegate.m in Sources */,
+				00F56D4919ECA00D00C636C4 /* DetailTaskViewController.m in Sources */,
 				00F56D2119EA0B3A00C636C4 /* Overdue_Task_Project.xcdatamodeld in Sources */,
+				00F56D4D19ECA0AF00C636C4 /* EditTaskViewController.m in Sources */,
 				00F56D2419EA0B3A00C636C4 /* ViewController.m in Sources */,
 				00F56D1B19EA0B3A00C636C4 /* main.m in Sources */,
 			);
