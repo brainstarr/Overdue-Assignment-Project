@@ -18,6 +18,7 @@
 		00F56D4519EC9F7E00C636C4 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F56D4419EC9F7E00C636C4 /* AddTaskViewController.m */; };
 		00F56D4919ECA00D00C636C4 /* DetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F56D4819ECA00D00C636C4 /* DetailTaskViewController.m */; };
 		00F56D4D19ECA0AF00C636C4 /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F56D4C19ECA0AF00C636C4 /* EditTaskViewController.m */; };
+		00F56D5419EF165400C636C4 /* TaskObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F56D5319EF165400C636C4 /* TaskObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		00F56D4819ECA00D00C636C4 /* DetailTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTaskViewController.m; sourceTree = "<group>"; };
 		00F56D4B19ECA0AF00C636C4 /* EditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTaskViewController.h; sourceTree = "<group>"; };
 		00F56D4C19ECA0AF00C636C4 /* EditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTaskViewController.m; sourceTree = "<group>"; };
+		00F56D5219EF165400C636C4 /* TaskObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskObject.h; sourceTree = "<group>"; };
+		00F56D5319EF165400C636C4 /* TaskObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,7 @@
 				00F56D2819EA0B3A00C636C4 /* Images.xcassets */,
 				00F56D2A19EA0B3A00C636C4 /* LaunchScreen.xib */,
 				00F56D1F19EA0B3A00C636C4 /* Overdue_Task_Project.xcdatamodeld */,
+				00F56D5519EF167300C636C4 /* Model */,
 				00F56D1819EA0B3A00C636C4 /* Supporting Files */,
 			);
 			path = "Overdue Task Project";
@@ -169,6 +173,15 @@
 				00F56D4C19ECA0AF00C636C4 /* EditTaskViewController.m */,
 			);
 			name = "Edit Task VC";
+			sourceTree = "<group>";
+		};
+		00F56D5519EF167300C636C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				00F56D5219EF165400C636C4 /* TaskObject.h */,
+				00F56D5319EF165400C636C4 /* TaskObject.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00F56D4519EC9F7E00C636C4 /* AddTaskViewController.m in Sources */,
+				00F56D5419EF165400C636C4 /* TaskObject.m in Sources */,
 				00F56D1E19EA0B3A00C636C4 /* AppDelegate.m in Sources */,
 				00F56D4919ECA00D00C636C4 /* DetailTaskViewController.m in Sources */,
 				00F56D2119EA0B3A00C636C4 /* Overdue_Task_Project.xcdatamodeld in Sources */,
