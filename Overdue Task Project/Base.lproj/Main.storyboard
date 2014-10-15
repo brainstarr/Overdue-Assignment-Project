@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hhe-dM-8cj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SUo-Nq-2Vm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -67,6 +67,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="IGS-8d-C0g">
+                        <barButtonItem key="leftBarButtonItem" title="Reorder" id="5b8-U0-M05"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xgm-oE-Npa"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -165,7 +166,7 @@
             </objects>
             <point key="canvasLocation" x="1978.5" y="768"/>
         </scene>
-        <!--Detail Task View Controller-->
+        <!--Task Details-->
         <scene sceneID="0l5-JL-STl">
             <objects>
                 <viewController id="jFJ-ak-YEn" customClass="DetailTaskViewController" sceneMemberID="viewController">
@@ -182,16 +183,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="107" y="88" width="186" height="25"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3N-Ft-SFz">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="123" width="368" height="192"/>
+                                    <rect key="frame" x="16" y="90" width="186" height="25"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfS-Vl-Ffv">
@@ -200,7 +192,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="340" width="92" height="21"/>
+                                    <rect key="frame" x="21" y="123" width="92" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3N-Ft-SFz">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="152" width="368" height="192"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -208,67 +209,33 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="4rt-TH-Iaw"/>
-                                <exclude reference="T3N-Ft-SFz"/>
                                 <exclude reference="UfS-Vl-Ffv"/>
+                                <exclude reference="T3N-Ft-SFz"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="4rt-TH-Iaw"/>
-                                <include reference="T3N-Ft-SFz"/>
                                 <include reference="UfS-Vl-Ffv"/>
+                                <include reference="T3N-Ft-SFz"/>
                             </mask>
                         </variation>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Zuo-f0-NSC">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="91x-Qr-rAw"/>
+                    <navigationItem key="navigationItem" title="Task Details" id="Zuo-f0-NSC">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="91x-Qr-rAw">
+                            <connections>
+                                <action selector="editButtonPressed:" destination="jFJ-ak-YEn" id="TQQ-vo-fQ7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="SfF-zZ-inA" kind="show" identifier="toEditVC" id="uxa-eK-dcZ"/>
+                        <segue destination="9fy-bx-VpW" kind="show" id="rL4-wa-RL7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GfB-9b-Za6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1978.5" y="82"/>
-        </scene>
-        <!--Edit Task View Controller-->
-        <scene sceneID="Eiu-hF-8OI">
-            <objects>
-                <viewController id="SfF-zZ-inA" customClass="EditTaskViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qGz-la-ENR"/>
-                        <viewControllerLayoutGuide type="bottom" id="cOg-ha-STa"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0x5-c7-icH">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muj-Yi-b7h">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="350" y="64" width="34" height="30"/>
-                                </variation>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="muj-Yi-b7h"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="muj-Yi-b7h"/>
-                            </mask>
-                        </variation>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UuA-3t-dr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2806.5" y="82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IOc-KG-2No">
@@ -287,6 +254,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgs-tq-NYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="286.5" y="374"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="dSG-1A-tdH">
+            <objects>
+                <viewController id="9fy-bx-VpW" customClass="EditTaskViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t3e-9g-uzA"/>
+                        <viewControllerLayoutGuide type="bottom" id="1s9-64-dZe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sm2-9q-3be">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="Y49-LN-MIe">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="acT-vs-O6H"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dM2-2U-Snq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2697" y="82"/>
         </scene>
     </scenes>
 </document>
