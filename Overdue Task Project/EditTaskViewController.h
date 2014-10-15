@@ -10,4 +10,10 @@
 
 @interface EditTaskViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+
+@property (strong, nonatomic) IBOutlet UITextField *editTitleTextField;
+@property (strong, nonatomic) IBOutlet UITextView *editDescriptionTextField;
+@property (strong, nonatomic) IBOutlet UIDatePicker *editTaskDatePicker;
+
 @end

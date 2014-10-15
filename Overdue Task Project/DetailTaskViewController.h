@@ -10,4 +10,11 @@
 
 @interface DetailTaskViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *editButton;
+
+@property (strong, nonatomic) IBOutlet UILabel *detailViewTaskTitle;
+@property (strong, nonatomic) IBOutlet UILabel *detailViewTaskDate;
+
+@property (strong, nonatomic) IBOutlet UILabel *detailTextView;
+
 @end

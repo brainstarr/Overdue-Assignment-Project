@@ -10,5 +10,10 @@
 
 @interface ViewController : UIViewController <UITextViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *addTaskButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *reorderButton;
+
 @end
 

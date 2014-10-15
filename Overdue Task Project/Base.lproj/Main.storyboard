@@ -19,8 +19,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IZL-R5-epk">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Cell" textLabel="zdy-By-KW7" detailTextLabel="eg7-Ed-R4A" style="IBUITableViewCellStyleSubtitle" id="qyF-Er-rrc">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Cell" editingAccessoryType="detailDisclosureButton" textLabel="zdy-By-KW7" detailTextLabel="eg7-Ed-R4A" style="IBUITableViewCellStyleSubtitle" id="qyF-Er-rrc">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qyF-Er-rrc" id="GyK-mJ-qCW">
@@ -46,6 +47,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -53,7 +55,8 @@
                                 </variation>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.98839126030000002" green="1" blue="0.84471297109999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="IZL-R5-epk"/>
@@ -67,11 +70,18 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="IGS-8d-C0g">
-                        <barButtonItem key="leftBarButtonItem" title="Reorder" id="5b8-U0-M05"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xgm-oE-Npa"/>
+                        <barButtonItem key="leftBarButtonItem" title="Reorder" id="5b8-U0-M05">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xgm-oE-Npa">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addTaskButton" destination="Xgm-oE-Npa" id="4zO-mj-kC7"/>
+                        <outlet property="reorderButton" destination="5b8-U0-M05" id="bPh-ig-l9b"/>
+                        <outlet property="tableView" destination="IZL-R5-epk" id="sBX-lP-blm"/>
                         <segue destination="hhe-dM-8cj" kind="presentation" identifier="toAddTaskVC" id="xha-bl-eFw"/>
                         <segue destination="jFJ-ak-YEn" kind="show" identifier="toDetailVC" id="N4b-bE-Aqs"/>
                     </connections>
@@ -177,7 +187,7 @@
                     <view key="view" contentMode="scaleToFill" id="7sc-PV-oJK">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rt-TH-Iaw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rt-TH-Iaw">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -186,17 +196,9 @@
                                     <rect key="frame" x="16" y="90" width="186" height="25"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfS-Vl-Ffv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3N-Ft-SFz">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="21" y="123" width="92" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3N-Ft-SFz">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.98839126030000002" green="1" blue="0.84471297109999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -204,20 +206,29 @@
                                     <rect key="frame" x="16" y="152" width="368" height="192"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfS-Vl-Ffv">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="123" width="92" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.76987999480000002" green="1" blue="0.65933775100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="4rt-TH-Iaw"/>
-                                <exclude reference="UfS-Vl-Ffv"/>
                                 <exclude reference="T3N-Ft-SFz"/>
+                                <exclude reference="UfS-Vl-Ffv"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="4rt-TH-Iaw"/>
-                                <include reference="UfS-Vl-Ffv"/>
                                 <include reference="T3N-Ft-SFz"/>
+                                <include reference="UfS-Vl-Ffv"/>
                             </mask>
                         </variation>
                     </view>
@@ -230,7 +241,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="9fy-bx-VpW" kind="show" id="rL4-wa-RL7"/>
+                        <outlet property="detailTextView" destination="T3N-Ft-SFz" id="Jei-vS-1Dj"/>
+                        <outlet property="detailViewTaskDate" destination="UfS-Vl-Ffv" id="8EO-S6-AiL"/>
+                        <outlet property="detailViewTaskTitle" destination="4rt-TH-Iaw" id="icS-Nl-BrE"/>
+                        <outlet property="editButton" destination="91x-Qr-rAw" id="aZp-y3-AUx"/>
+                        <segue destination="9fy-bx-VpW" kind="show" identifier="toEditView" id="rL4-wa-RL7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GfB-9b-Za6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -255,7 +270,7 @@
             </objects>
             <point key="canvasLocation" x="286.5" y="374"/>
         </scene>
-        <!--Title-->
+        <!--Edit Task-->
         <scene sceneID="dSG-1A-tdH">
             <objects>
                 <viewController id="9fy-bx-VpW" customClass="EditTaskViewController" sceneMemberID="viewController">
@@ -265,11 +280,62 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sm2-9q-3be">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Vm-WK-1E8">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.98839126030000002" green="1" blue="0.84471297109999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="124" width="368" height="195"/>
+                                </variation>
+                            </textView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bnT-ch-gh7">
+                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="435089856.93912202">
+                                    <!--2014-10-15 18:17:36 +0000-->
+                                </date>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="365" width="400" height="162"/>
+                                </variation>
+                            </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oRF-80-2hf">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="86" width="222" height="30"/>
+                                </variation>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.76987999480000002" green="1" blue="0.65933775100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="2Vm-WK-1E8"/>
+                                <exclude reference="bnT-ch-gh7"/>
+                                <exclude reference="oRF-80-2hf"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="2Vm-WK-1E8"/>
+                                <include reference="bnT-ch-gh7"/>
+                                <include reference="oRF-80-2hf"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Y49-LN-MIe">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="acT-vs-O6H"/>
+                    <navigationItem key="navigationItem" title="Edit Task" id="Y49-LN-MIe">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="acT-vs-O6H">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="editDescriptionTextField" destination="2Vm-WK-1E8" id="HYa-Dx-f0E"/>
+                        <outlet property="editTaskDatePicker" destination="bnT-ch-gh7" id="AJ2-jn-bXZ"/>
+                        <outlet property="editTextView" destination="oRF-80-2hf" id="VeB-Zh-yHp"/>
+                        <outlet property="editTitleTextField" destination="oRF-80-2hf" id="ui2-LB-9Et"/>
+                        <outlet property="saveButton" destination="acT-vs-O6H" id="pAs-T3-yoe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dM2-2U-Snq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
