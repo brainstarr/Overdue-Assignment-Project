@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TaskObject.h"
+
+@protocol addTaskViewControllerDelegate <NSObject>
+
+@required
+
+-(void)didCancel;
+-(void)didCreateTask:(TaskObject *)task;
+
+@end
+
 
 @interface AddTaskViewController : UIViewController
+
+@property (weak, nonatomic) id <addTaskViewControllerDelegate> delegate;
 
 @end

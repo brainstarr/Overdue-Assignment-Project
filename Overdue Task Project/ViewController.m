@@ -25,5 +25,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)didCancel
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)didCreateTask:(TaskObject *)task
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end
