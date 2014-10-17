@@ -24,6 +24,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 /*
 #pragma mark - Navigation
 
@@ -34,4 +36,22 @@
 }
 */
 
+-(TaskObject *)returnNewTaskObject
+{
+    TaskObject *task = [[TaskObject alloc]init];
+    task.taskName = self.addTaskNameField.text;
+    task.taskDescription = self.addTaskTextField.text;
+    task.taskDate = self.addTaskDatePicker.date;
+    task.isCompleted = NO;
+    
+    return task;
+}
+
+- (IBAction)addTaskButtonPressed:(UIButton *)sender {
+    [self.delegate didCreateTask:[self returnNewTaskObject]];
+}
+
+- (IBAction)cancelButtonPressed:(UIButton *)sender {
+    [self.delegate didCancel];
+}
 @end

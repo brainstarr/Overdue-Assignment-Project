@@ -12,6 +12,7 @@
 @interface ViewController : UIViewController <UITextViewDelegate, addTaskViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic)NSMutableArray *tasks;
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addTaskButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *reorderButton;

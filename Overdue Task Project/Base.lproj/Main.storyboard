@@ -19,7 +19,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IZL-R5-epk">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.98839126030000002" green="1" blue="0.84471297109999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Cell" editingAccessoryType="detailDisclosureButton" textLabel="zdy-By-KW7" detailTextLabel="eg7-Ed-R4A" style="IBUITableViewCellStyleSubtitle" id="qyF-Er-rrc">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -46,7 +46,9 @@
                                                     </variation>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
@@ -120,6 +122,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="231" y="373" width="30" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="addTaskButtonPressed:" destination="hhe-dM-8cj" eventType="touchUpInside" id="ChM-VE-SDe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roG-SJ-h6w">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -130,6 +135,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="128" y="373" width="48" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="hhe-dM-8cj" eventType="touchUpInside" id="NeU-Mr-VyL"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hn5-Nn-0xW">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -171,6 +179,11 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addTaskDatePicker" destination="ro5-7x-EdV" id="c3r-xZ-hM9"/>
+                        <outlet property="addTaskNameField" destination="hn5-Nn-0xW" id="7uM-fE-TdT"/>
+                        <outlet property="addTaskTextField" destination="Lcn-LA-8AR" id="s07-dr-h00"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akL-E4-Jc5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -260,6 +273,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fRP-nW-xat">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.98839126030000002" green="1" blue="0.84471297109999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

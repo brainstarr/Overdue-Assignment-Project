@@ -35,4 +35,13 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(NSMutableArray *)tasks
+{
+    if (!_tasks){
+        _tasks = [[NSMutableArray alloc]init];
+    }
+    
+    return _tasks;
+}
+
 @end
