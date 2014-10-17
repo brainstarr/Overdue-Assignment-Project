@@ -14,8 +14,9 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)NSMutableArray *tasks;
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *addTaskButton;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *reorderButton;
+- (IBAction)addTaskBarButtonPressed:(UIBarButtonItem *)sender;
+
+- (IBAction)reorderButtonPressed:(UIBarButtonItem *)sender;
 
 @end
 

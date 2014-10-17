@@ -74,15 +74,19 @@
                     <navigationItem key="navigationItem" id="IGS-8d-C0g">
                         <barButtonItem key="leftBarButtonItem" title="Reorder" id="5b8-U0-M05">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="reorderButtonPressed:" destination="vXZ-lx-hvc" id="qfN-D2-oVq"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xgm-oE-Npa">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="addTaskBarButtonPressed:" destination="vXZ-lx-hvc" id="N4G-Aj-fB0"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addTaskButton" destination="Xgm-oE-Npa" id="4zO-mj-kC7"/>
-                        <outlet property="reorderButton" destination="5b8-U0-M05" id="bPh-ig-l9b"/>
                         <outlet property="tableView" destination="IZL-R5-epk" id="sBX-lP-blm"/>
                         <segue destination="hhe-dM-8cj" kind="presentation" identifier="toAddTaskVC" id="xha-bl-eFw"/>
                         <segue destination="jFJ-ak-YEn" kind="show" identifier="toDetailVC" id="N4b-bE-Aqs"/>
