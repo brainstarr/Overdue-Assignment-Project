@@ -105,6 +105,7 @@
                         <viewControllerLayoutGuide type="bottom" id="UEr-TW-OAD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="m1R-FL-nic">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ro5-7x-EdV">
@@ -202,6 +203,7 @@
                         <viewControllerLayoutGuide type="bottom" id="n6i-Mr-WKA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7sc-PV-oJK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rt-TH-Iaw">
@@ -298,6 +300,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1s9-64-dZe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sm2-9q-3be">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Vm-WK-1E8">

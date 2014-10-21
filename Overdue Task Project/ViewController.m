@@ -18,6 +18,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib. 
     
+    NSArray *tasksAsPropertyLists = [[NSUserDefaults standardUserDefaults]arrayForKey:TASK_OBJECTS_KEY];
+    
+    for (NSDictionary *dictionary in tasksAsPropertyLists)
+    {
+        TaskObject *taskObject = [self taskObjectForDictionary:dictionary];
+        [self.tasks addObject:taskObject];
+    }
 }
 
 #pragma mark - segway method
@@ -84,6 +91,13 @@
     }
     
     return _tasks;
+}
+
+-(TaskObject *)taskObjectForDictionary:(NSDictionary *)dictionary
+{
+    TaskObject *task = [[TaskObject alloc]initWithData:dictionary];
+    
+    return task;
 }
 
 @end
