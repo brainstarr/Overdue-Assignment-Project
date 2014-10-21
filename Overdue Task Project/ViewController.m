@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib. 
+    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.tableView.dataSource = self;
     
     NSArray *tasksAsPropertyLists = [[NSUserDefaults standardUserDefaults]arrayForKey:TASK_OBJECTS_KEY];
     
@@ -27,7 +29,7 @@
     }
 }
 
-#pragma mark - segway method
+#pragma mark - segue method
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -98,6 +100,35 @@
     TaskObject *task = [[TaskObject alloc]initWithData:dictionary];
     
     return task;
+}
+
+#pragma Data Source
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.tasks count];
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    //configuration
+    TaskObject *task = self.tasks[indexPath.row];
+    cell.textLabel.text = task.taskName;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateStyle:@"mm-dd-yyyy"];
+    NSString *stringFromDate = [formatter stringFromDate:task.taskDate];
+    cell.detailTextLabel.text = stringFromDate;
+    
+    return cell;
 }
 
 @end
