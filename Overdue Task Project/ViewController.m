@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     
     NSArray *tasksAsPropertyLists = [[NSUserDefaults standardUserDefaults]arrayForKey:TASK_OBJECTS_KEY];
     
@@ -114,6 +115,8 @@
     return 1;
 }
 
+
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -123,7 +126,7 @@
     TaskObject *task = self.tasks[indexPath.row];
     cell.textLabel.text = task.taskName;
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:@"mm-dd-yyyy"];
     NSString *stringFromDate = [formatter stringFromDate:task.taskDate];
     cell.detailTextLabel.text = stringFromDate;
