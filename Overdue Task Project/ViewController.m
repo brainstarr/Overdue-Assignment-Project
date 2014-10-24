@@ -60,9 +60,10 @@
 {
     [self.tasks addObject:task];
     
-    NSLog(@"%@", task.taskName);
+    //NSLog(@"%@", task.taskName);
     
     NSMutableArray *taskObjectsAsPropertyLists = [[[NSUserDefaults standardUserDefaults] arrayForKey:TASK_OBJECTS_KEY]mutableCopy];
+    
     if(!taskObjectsAsPropertyLists) taskObjectsAsPropertyLists = [[NSMutableArray alloc]init];
     
     [taskObjectsAsPropertyLists addObject:[self taskObjectAsPropertyList:task]];
@@ -103,6 +104,16 @@
     return task;
 }
 
+//-(BOOL)isDateGreaterThanDate:(NSDate *)date and:(NSDate *)toDate
+//{
+//    if ([date timeIntervalSince1970] > [toDate timeIntervalSince1970]) {
+//        return YES;
+//    }
+//    else{
+//        return NO;
+//    }
+//}
+
 #pragma Data Source
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -116,22 +127,30 @@
 }
 
 
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    //configuration
+    //Cell configuration
     TaskObject *task = self.tasks[indexPath.row];
     cell.textLabel.text = task.taskName;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:@"mm-dd-yyyy"];
+    [formatter setDateStyle:@"MM-dd-yyyy"];
     NSString *stringFromDate = [formatter stringFromDate:task.taskDate];
     cell.detailTextLabel.text = stringFromDate;
     
-    return cell;
+    if ([task.taskDate timeIntervalSince1970] < [[NSDate date] timeIntervalSince1970])
+    {
+        cell.backgroundColor = [UIColor redColor];
+    }
+    else {
+        cell.backgroundColor = [UIColor greenColor];
+    }
+    
+    return cell; 
 }
+
 
 @end
