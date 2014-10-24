@@ -152,5 +152,18 @@
     return cell; 
 }
 
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TaskObject *task = self.tasks[indexPath.row];
+    if (task.isCompleted == YES){
+        task.isCompleted = NO;
+        NSLog(@"task marked incomplete");
+    }
+    else if (task.isCompleted == NO){
+        task.isCompleted = YES;
+        NSLog(@"task marked complete");
+    }
+    
+}
 
 @end
