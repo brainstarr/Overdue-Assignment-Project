@@ -30,6 +30,11 @@
     }
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 #pragma mark - segue method
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -39,15 +44,25 @@
         AddTaskViewController *addTaskVC = segue.destinationViewController;
         addTaskVC.delegate = self;
     }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    else if ([segue.destinationViewController isKindOfClass:[DetailTaskViewController class]])
+    {
+        DetailTaskViewController *detailVC = segue.destinationViewController;
+        
+        NSIndexPath *path = sender;
+        
+        TaskObject *selectedTask = self.tasks[path.row];
+        
+        detailVC.task = selectedTask;
+    }
 }
 
 - (IBAction)addTaskBarButtonPressed:(UIBarButtonItem *)sender {
     [self performSegueWithIdentifier:@"toAddTaskVC" sender:nil];
+}
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"toDetailVC" sender:indexPath];
 }
 
 - (IBAction)reorderButtonPressed:(UIBarButtonItem *)sender {

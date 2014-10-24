@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AddTaskViewController.h"
+#import "DetailTaskViewController.h"
 
 @interface ViewController : UIViewController <UITextViewDelegate, UITableViewDataSource, UITableViewDelegate, addTaskViewControllerDelegate>
 

@@ -19,6 +19,15 @@
     // Do any additional setup after loading the view.
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     
+    self.detailViewTaskTitle.text = self.task.taskName;
+    self.detailTextView.text = self.task.taskDescription;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"mm-dd-yyyy"];
+    
+    NSString *stringFromDate = [formatter stringFromDate:self.task.taskDate];
+    
+    self.detailViewTaskDate.text = stringFromDate;
 }
 
 - (void)didReceiveMemoryWarning {

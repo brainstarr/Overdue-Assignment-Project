@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TaskObject.h"
 
 @interface DetailTaskViewController : UIViewController
+
+@property (strong, nonatomic) TaskObject *task;
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *editButton;
 
