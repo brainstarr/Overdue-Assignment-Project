@@ -104,6 +104,21 @@
     return task;
 }
 
+-(void)updateCompletionOfTask:(TaskObject *)task forIndexPath:(NSIndexPath *)indexPath{
+    NSMutableArray *taskObjectsAsPropertyLists = [[[NSUserDefaults standardUserDefaults]arrayForKey:TASK_OBJECTS_KEY]mutableCopy];
+    if (!taskObjectsAsPropertyLists) taskObjectsAsPropertyLists = [[NSMutableArray alloc]init];
+    
+    [taskObjectsAsPropertyLists removeObjectAtIndex:indexPath.row];
+    
+    if (task.isCompleted == YES) task.isCompleted = NO;
+    else task.isCompleted = YES;
+    [taskObjectsAsPropertyLists insertObject:[self taskObjectAsPropertyList:task] atIndex:indexPath.row];
+    
+    [[NSUserDefaults standardUserDefaults]setObject:taskObjectsAsPropertyLists forKey:TASK_OBJECTS_KEY];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    [self.tableView reloadData];
+}
+
 //-(BOOL)isDateGreaterThanDate:(NSDate *)date and:(NSDate *)toDate
 //{
 //    if ([date timeIntervalSince1970] > [toDate timeIntervalSince1970]) {
@@ -112,6 +127,7 @@
 //    else{
 //        return NO;
 //    }
+//   [self.tableView reloadData];
 //}
 
 #pragma Data Source
@@ -141,7 +157,7 @@
     NSString *stringFromDate = [formatter stringFromDate:task.taskDate];
     cell.detailTextLabel.text = stringFromDate;
     
-    if ([task.taskDate timeIntervalSince1970] < [[NSDate date] timeIntervalSince1970])
+    if (task.isCompleted == NO)
     {
         cell.backgroundColor = [UIColor redColor];
     }
@@ -155,14 +171,16 @@
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TaskObject *task = self.tasks[indexPath.row];
-    if (task.isCompleted == YES){
-        task.isCompleted = NO;
-        NSLog(@"task marked incomplete");
-    }
-    else if (task.isCompleted == NO){
-        task.isCompleted = YES;
-        NSLog(@"task marked complete");
-    }
+    
+    [self updateCompletionOfTask:task forIndexPath:indexPath];
+//    if (task.isCompleted == YES){
+//        task.isCompleted = NO;
+//        NSLog(@"task marked incomplete");
+//    }
+//    else if (task.isCompleted == NO){
+//        task.isCompleted = YES;
+//        NSLog(@"task marked complete");
+//    }
     
 }
 
