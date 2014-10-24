@@ -119,16 +119,16 @@
     [self.tableView reloadData];
 }
 
-//-(BOOL)isDateGreaterThanDate:(NSDate *)date and:(NSDate *)toDate
-//{
-//    if ([date timeIntervalSince1970] > [toDate timeIntervalSince1970]) {
-//        return YES;
-//    }
-//    else{
-//        return NO;
-//    }
-//   [self.tableView reloadData];
-//}
+-(BOOL)isDateGreaterThanDate:(NSDate *)date and:(NSDate *)toDate
+{
+    NSTimeInterval dateInterval = [date timeIntervalSince1970];
+    NSTimeInterval toDateInterval = [toDate timeIntervalSince1970];
+    
+    if (dateInterval > toDateInterval) return YES;
+    else return NO;
+    
+    
+}
 
 #pragma Data Source
 
@@ -157,15 +157,13 @@
     NSString *stringFromDate = [formatter stringFromDate:task.taskDate];
     cell.detailTextLabel.text = stringFromDate;
     
-    if (task.isCompleted == NO)
-    {
-        cell.backgroundColor = [UIColor redColor];
-    }
-    else {
-        cell.backgroundColor = [UIColor greenColor];
-    }
+    BOOL isOverdue = [self isDateGreaterThanDate:[NSDate date] and:task.taskDate];
     
-    return cell; 
+    if (task.isCompleted == YES) cell.backgroundColor = [UIColor greenColor];
+    else if (isOverdue == YES) cell.backgroundColor = [UIColor redColor];
+    else cell.backgroundColor = [UIColor yellowColor];
+    
+    return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -173,14 +171,7 @@
     TaskObject *task = self.tasks[indexPath.row];
     
     [self updateCompletionOfTask:task forIndexPath:indexPath];
-//    if (task.isCompleted == YES){
-//        task.isCompleted = NO;
-//        NSLog(@"task marked incomplete");
-//    }
-//    else if (task.isCompleted == NO){
-//        task.isCompleted = YES;
-//        NSLog(@"task marked complete");
-//    }
+
     
 }
 
