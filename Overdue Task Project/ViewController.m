@@ -66,6 +66,8 @@
 }
 
 - (IBAction)reorderButtonPressed:(UIBarButtonItem *)sender {
+    if (self.tableView.editing == YES) [self.tableView setEditing:NO];
+    else [self.tableView setEditing:YES];
 }
 
 
@@ -141,8 +143,18 @@
     
     if (dateInterval > toDateInterval) return YES;
     else return NO;
+}
+
+-(void)saveTaskOrder
+{
+    NSMutableArray *taskObjectsAsPropertyLists = [[NSMutableArray alloc]init];
     
+    for (int x = 0; x < [self.tasks count]; x++) {
+        [taskObjectsAsPropertyLists addObject:[self taskObjectAsPropertyList:self.tasks[x]]];
+    }
     
+    [[NSUserDefaults standardUserDefaults]setObject:taskObjectsAsPropertyLists forKey:TASK_OBJECTS_KEY];
+    [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
 #pragma Data Source
@@ -181,11 +193,13 @@
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TaskObject *task = self.tasks[indexPath.row];
     
     [self updateCompletionOfTask:task forIndexPath:indexPath];
+    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -210,6 +224,20 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
+
+-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    TaskObject *taskObject = self.tasks[sourceIndexPath.row];
+    [self.tasks removeObjectAtIndex:sourceIndexPath.row];
+    [self.tasks insertObject:taskObject atIndex:sourceIndexPath.row];
+    [self saveTaskOrder];
+}
+
 
 @end
 
