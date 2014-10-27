@@ -38,5 +38,16 @@
 */
 
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender {
+    [self updateTask];
+    [self.delegate didUpdateTask:self.task];
+}
+
+
+#pragma Helper Methods
+-(void)updateTask
+{
+    self.task.taskName = self.editTitleTextField.text;
+    self.task.taskDescription = self.editDescriptionTextField.text;
+    self.task.taskDate = self.editTaskDatePicker.date;
 }
 @end

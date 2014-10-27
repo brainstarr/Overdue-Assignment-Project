@@ -10,7 +10,7 @@
 #import "TaskObject.h"
 #import "EditTaskViewController.h"
 
-@interface DetailTaskViewController : UIViewController
+@interface DetailTaskViewController : UIViewController <EditTaskViewControllerDelegate>
 
 @property (strong, nonatomic) TaskObject *task;
 

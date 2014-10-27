@@ -51,6 +51,7 @@
     {
         EditTaskViewController *editVC = segue.destinationViewController;
         editVC.task = self.task;
+        editVC.delegate = self;
     }
 }
 
@@ -58,4 +59,35 @@
 - (IBAction)editButtonPressed:(UIBarButtonItem *)sender {
     [self performSegueWithIdentifier:@"toEditVC" sender:nil];
 }
+
+
+
+#pragma EditTaskVC Delegate
+
+-(void)didUpdateTask:(TaskObject *)updatedTask
+{
+    self.task = updatedTask;
+    self.task.taskName = updatedTask.taskName;
+    self.task.taskDescription = updatedTask.taskDescription;
+    self.task.taskDate = updatedTask.taskDate;
+
+//    NSMutableArray *taskObjectsAsPropertyLists = [[[NSUserDefaults standardUserDefaults]arrayForKey:TASK_OBJECTS_KEY]mutableCopy];
+//    if (!taskObjectsAsPropertyLists) taskObjectsAsPropertyLists = [[NSMutableArray alloc]init];
+//    
+//    [taskObjectsAsPropertyLists removeObject:];
+//    
+//    
+//    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
+
+
+
+
+
+
+
+
+

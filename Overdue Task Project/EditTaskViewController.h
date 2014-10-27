@@ -9,8 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "TaskObject.h"
 
+@protocol EditTaskViewControllerDelegate <NSObject>
+
+@required
+
+-(void)didUpdateTask:(TaskObject *)updatedTask;
+
+@end
+
 @interface EditTaskViewController : UIViewController
 
+@property (weak, nonatomic) id <EditTaskViewControllerDelegate> delegate;
 @property (strong, nonatomic) TaskObject *task;
 
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender;
