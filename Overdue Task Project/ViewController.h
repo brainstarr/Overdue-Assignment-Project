@@ -10,7 +10,7 @@
 #import "AddTaskViewController.h"
 #import "DetailTaskViewController.h"
 
-@interface ViewController : UIViewController <UITextViewDelegate, UITableViewDataSource, UITableViewDelegate, addTaskViewControllerDelegate>
+@interface ViewController : UIViewController <UITextViewDelegate, UITableViewDataSource, UITableViewDelegate, addTaskViewControllerDelegate, DetailTaskViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)NSMutableArray *tasks;

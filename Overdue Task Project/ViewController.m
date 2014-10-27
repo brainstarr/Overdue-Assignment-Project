@@ -53,6 +53,7 @@
         TaskObject *selectedTask = self.tasks[path.row];
         
         detailVC.task = selectedTask;
+        detailVC.delegate = self;
     }
 }
 
@@ -94,6 +95,14 @@
 -(void)didCancel
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - DetailVC Delegate Methods
+
+-(void)updateTask
+{
+    [self saveTasks];
+    [self.tableView reloadData];
 }
 
 #pragma mark - helper methods
@@ -145,7 +154,7 @@
     else return NO;
 }
 
--(void)saveTaskOrder
+-(void)saveTasks
 {
     NSMutableArray *taskObjectsAsPropertyLists = [[NSMutableArray alloc]init];
     
@@ -235,7 +244,7 @@
     TaskObject *taskObject = self.tasks[sourceIndexPath.row];
     [self.tasks removeObjectAtIndex:sourceIndexPath.row];
     [self.tasks insertObject:taskObject atIndex:sourceIndexPath.row];
-    [self saveTaskOrder];
+    [self saveTasks];
 }
 
 

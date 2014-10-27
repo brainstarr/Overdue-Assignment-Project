@@ -13,7 +13,7 @@
 
 @required
 
--(void)didUpdateTask:(TaskObject *)updatedTask;
+-(void)didUpdateTask;
 
 @end
 

@@ -64,21 +64,20 @@
 
 #pragma EditTaskVC Delegate
 
--(void)didUpdateTask:(TaskObject *)updatedTask
+-(void)didUpdateTask
 {
-    self.task = updatedTask;
-    self.task.taskName = updatedTask.taskName;
-    self.task.taskDescription = updatedTask.taskDescription;
-    self.task.taskDate = updatedTask.taskDate;
-
-//    NSMutableArray *taskObjectsAsPropertyLists = [[[NSUserDefaults standardUserDefaults]arrayForKey:TASK_OBJECTS_KEY]mutableCopy];
-//    if (!taskObjectsAsPropertyLists) taskObjectsAsPropertyLists = [[NSMutableArray alloc]init];
-//    
-//    [taskObjectsAsPropertyLists removeObject:];
-//    
-//    
-//    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    self.detailViewTaskTitle.text = self.task.taskName;
+    self.detailTextView.text = self.task.taskDescription;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"mm-DD-yyyy"];
+    
+    NSString *stringFromDate = [formatter stringFromDate:self.task.taskDate];
+    
+    self.detailViewTaskDate.text = stringFromDate;
+ 
+    [self.navigationController popViewControllerAnimated:YES];
+    [self.delegate updateTask];
 }
 
 @end

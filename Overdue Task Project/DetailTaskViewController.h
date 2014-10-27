@@ -10,8 +10,15 @@
 #import "TaskObject.h"
 #import "EditTaskViewController.h"
 
+@protocol DetailTaskViewControllerDelegate <NSObject>
+
+-(void)updateTask;
+
+@end
+
 @interface DetailTaskViewController : UIViewController <EditTaskViewControllerDelegate>
 
+@property (weak, nonatomic) id <DetailTaskViewControllerDelegate> delegate;
 @property (strong, nonatomic) TaskObject *task;
 
 - (IBAction)editButtonPressed:(UIBarButtonItem *)sender;
