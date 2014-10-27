@@ -7,6 +7,8 @@
 //
 
 #import "DetailTaskViewController.h"
+#import "EditTaskViewController.h"
+
 
 @interface DetailTaskViewController ()
 
@@ -35,18 +37,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)editButtonPressed:(UIBarButtonItem *)sender {
-    [self performSegueWithIdentifier:@"toEditVC" sender:sender];
-}
+//- (IBAction)editButtonPressed:(UIBarButtonItem *)sender {
+//    [self performSegueWithIdentifier:@"toEditVC" sender:sender];
+//}
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.destinationViewController isKindOfClass:[EditTaskViewController class]])
+    {
+        EditTaskViewController *editVC = segue.destinationViewController;
+        editVC.task = self.task;
+    }
 }
-*/
 
+
+- (IBAction)editButtonPressed:(UIBarButtonItem *)sender {
+    [self performSegueWithIdentifier:@"toEditVC" sender:nil];
+}
 @end

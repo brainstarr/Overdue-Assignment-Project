@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "TaskObject.h"
+#import "EditTaskViewController.h"
 
 @interface DetailTaskViewController : UIViewController
 
 @property (strong, nonatomic) TaskObject *task;
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *editButton;
+- (IBAction)editButtonPressed:(UIBarButtonItem *)sender;
+
 
 @property (strong, nonatomic) IBOutlet UILabel *detailViewTaskTitle;
 @property (strong, nonatomic) IBOutlet UILabel *detailViewTaskDate;

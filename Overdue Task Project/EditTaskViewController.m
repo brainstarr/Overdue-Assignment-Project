@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.editTitleTextField.text = self.task.taskName;
+    self.editDescriptionTextField.text = self.task.taskDescription;
+    self.editTaskDatePicker.date = self.task.taskDate;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +37,6 @@
 }
 */
 
+- (IBAction)saveButtonPressed:(UIBarButtonItem *)sender {
+}
 @end

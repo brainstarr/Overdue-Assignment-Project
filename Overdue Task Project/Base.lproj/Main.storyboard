@@ -255,7 +255,7 @@
                     <navigationItem key="navigationItem" title="Task Details" id="Zuo-f0-NSC">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="91x-Qr-rAw">
                             <connections>
-                                <action selector="editButtonPressed:" destination="jFJ-ak-YEn" id="TQQ-vo-fQ7"/>
+                                <action selector="editButtonPressed:" destination="jFJ-ak-YEn" id="960-rp-Q3l"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -263,8 +263,7 @@
                         <outlet property="detailTextView" destination="T3N-Ft-SFz" id="Jei-vS-1Dj"/>
                         <outlet property="detailViewTaskDate" destination="UfS-Vl-Ffv" id="8EO-S6-AiL"/>
                         <outlet property="detailViewTaskTitle" destination="4rt-TH-Iaw" id="icS-Nl-BrE"/>
-                        <outlet property="editButton" destination="91x-Qr-rAw" id="aZp-y3-AUx"/>
-                        <segue destination="9fy-bx-VpW" kind="show" identifier="toEditView" id="rL4-wa-RL7"/>
+                        <segue destination="9fy-bx-VpW" kind="show" identifier="toEditVC" id="rL4-wa-RL7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GfB-9b-Za6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -349,14 +348,15 @@
                     <navigationItem key="navigationItem" title="Edit Task" id="Y49-LN-MIe">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="acT-vs-O6H">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="9fy-bx-VpW" id="SIy-qS-2Ai"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="editDescriptionTextField" destination="2Vm-WK-1E8" id="HYa-Dx-f0E"/>
-                        <outlet property="editTaskDatePicker" destination="bnT-ch-gh7" id="AJ2-jn-bXZ"/>
-                        <outlet property="editTextView" destination="oRF-80-2hf" id="VeB-Zh-yHp"/>
-                        <outlet property="editTitleTextField" destination="oRF-80-2hf" id="ui2-LB-9Et"/>
-                        <outlet property="saveButton" destination="acT-vs-O6H" id="pAs-T3-yoe"/>
+                        <outlet property="editTaskDatePicker" destination="bnT-ch-gh7" id="7MH-tW-mty"/>
+                        <outlet property="editTitleTextField" destination="oRF-80-2hf" id="zkL-hS-Qnp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dM2-2U-Snq" userLabel="First Responder" sceneMemberID="firstResponder"/>
