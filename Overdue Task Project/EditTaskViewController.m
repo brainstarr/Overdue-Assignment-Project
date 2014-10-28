@@ -20,6 +20,9 @@
     self.editTitleTextField.text = self.task.taskName;
     self.editDescriptionTextField.text = self.task.taskDescription;
     self.editTaskDatePicker.date = self.task.taskDate;
+    
+    self.editTitleTextField.delegate = self;
+    self.editDescriptionTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,4 +53,23 @@
     self.task.taskDescription = self.editDescriptionTextField.text;
     self.task.taskDate = self.editTaskDatePicker.date;
 }
+
+#pragma mark - UITextfield/UITextView Delegate Methods
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.editTitleTextField resignFirstResponder];
+    return YES;
+}
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"]){
+        [self.editDescriptionTextField resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
+
 @end

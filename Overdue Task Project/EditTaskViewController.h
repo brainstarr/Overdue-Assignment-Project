@@ -17,7 +17,7 @@
 
 @end
 
-@interface EditTaskViewController : UIViewController
+@interface EditTaskViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) id <EditTaskViewControllerDelegate> delegate;
 @property (strong, nonatomic) TaskObject *task;
@@ -26,6 +26,6 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *editTitleTextField;
 @property (strong, nonatomic) IBOutlet UITextView *editDescriptionTextField;
-@property (strong, nonatomic) IBOutlet UIDatePicker *editTaskDatePicker;
+@property (strong, nonatomic) IBOutlet UIDatePicker *editTaskDatePicker; 
 
 @end

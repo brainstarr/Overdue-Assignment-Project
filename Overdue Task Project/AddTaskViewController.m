@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.addTaskTextField.delegate = self;
+    self.addTaskNameField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,4 +56,22 @@
 - (IBAction)cancelButtonPressed:(UIButton *)sender {
     [self.delegate didCancel];
 }
+
+#pragma mark - UITextfield/UITextView Delegate Methods
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.addTaskNameField resignFirstResponder];
+    return YES;
+}
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"]){
+        [self.addTaskTextField resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
 @end

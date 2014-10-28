@@ -19,7 +19,7 @@
 @end
 
 
-@interface AddTaskViewController : UIViewController
+@interface AddTaskViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) id <addTaskViewControllerDelegate> delegate;
 
